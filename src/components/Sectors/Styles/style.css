@@ -1,0 +1,47 @@
+.cursorPointer{
+    cursor: crosshair;
+}
+#canvas{
+    width: 500px;
+    height: 278px;
+    position: absolute;
+    z-index:101;
+}
+#main-div{
+    position: relative;
+    background: url(../Images/sectormain.jpg);
+}
+.btn{
+    pointer-events: auto;
+}
+#canvas-div{
+    z-index: 100;
+    height: 278px;
+    position: relative;
+}
+/* .canvas-delete::after{
+    content: 'x'; 
+color: #fff;
+font-weight: 300;
+font-family: Arial, sans-serif;
+} */
+#main-div:hover .fa-times, #main-div:hover .fa-edit{
+    visibility: visible;
+}
+.canvas-delete > .fa-times, .canvas-delete > .fa-edit{
+    cursor: pointer;
+    position: absolute;
+    font-size: 12px;
+    font-weight: normal;
+    visibility: visible;
+}
+/* .canvas-delete > .fa-plus{
+    color: green;
+} */
+.button-main{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    justify-content: space-between;
+}

@@ -1,0 +1,8 @@
+.floor-main{
+    padding: 10px;
+border-radius: 4px;
+border: 1px solid lightgrey;
+}
+#elements{
+    list-style-type: none;
+}
