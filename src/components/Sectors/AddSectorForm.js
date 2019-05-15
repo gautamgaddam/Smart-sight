@@ -23,7 +23,7 @@ export class AddSector extends Component {
       this.setState(() => ({ error: "Please Provide Sector Name" }));
     } else {
       this.setState(() => ({ error: "" }));
-      this.props.onSubmit({
+      this.props.onSave({
         createdAt: this.state.createdAt,
         name: this.state.name,
         id: this.state.id,

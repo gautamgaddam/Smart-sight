@@ -6,7 +6,7 @@ import "./common.css";
 import Add from "./Add";
 import { uuid } from "uuid";
 
-const AccordianItem = ({ name, selectedRowId, id, onCollapse, tempFloors }) => {
+const AccordianItem = ({ name, selectedRowId, id, onCollapse, tempFloors, width, height }) => {
   return (
     <div className="accordion__item">
       <div
@@ -40,7 +40,7 @@ const AccordianItem = ({ name, selectedRowId, id, onCollapse, tempFloors }) => {
             </div>
             {tempFloors.length > 0 ? (
               tempFloors.map(floor => (
-                <FloorAccordain name={floor.name} id={floor.id} />
+                <FloorAccordain name={floor.name} id={floor.id} width={floor.width} height={floor.height}/>
               ))
             ) : (
               <h3>No Floors Found</h3>

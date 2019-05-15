@@ -11,7 +11,9 @@ export class AddFloor extends Component {
       createdAt: new Date(),
       name: "",
       show: props.show,
-      id: -1
+      id: -1,
+      width:"",
+      height:""
     };
     this.onSubmit= this.onSubmit.bind(this);
   }
@@ -22,11 +24,19 @@ export class AddFloor extends Component {
   handleDateChange = createdAt => {
     this.setState({ createdAt });
   };
+  handleWidth= e=>{
+    const val= e.target.value;
+    this.setState({width: val})
+  }
+  handleHeight= e=>{
+    const val= e.target.value;
+    this.setState({height: val})
+  }
   componentDidMount(){
     console.log(this.props);
   }
   onSubmit = (e) => {
-   debugger
+
     e.preventDefault();
     if (!this.state.name || !this.state.createdAt) {
       this.setState(() => ({ error: "Please Provide Floor Name" }));
@@ -37,7 +47,8 @@ export class AddFloor extends Component {
         createdAt: this.state.createdAt,
         name: this.state.name,
         id: this.state.id,
-        value: "Floor"
+        width: this.state.width,
+        height: this.state.height
       });
     }
   };
@@ -49,11 +60,28 @@ export class AddFloor extends Component {
             type="text"
             placeholder="Add Floor"
             autoFocus
-            className="  col-md-3 mr-3 ml-3 "
+            className="col-md-2 mr-3 ml-3 "
             value={this.state.name}
             onChange={this.handleChange}
           />
-          <div className="col-md-3">
+          <input
+            type="text"
+            placeholder="Width"
+        
+            className="col-md-2 mr-3 ml-3 "
+            value={this.state.width}
+            onChange={this.handleWidth}
+          />
+          <input
+            type="text"
+            placeholder="Height"
+          
+            className="col-md-2 mr-3 ml-3 "
+            value={this.state.height}
+            onChange={this.handleHeight}
+          />
+
+          <div className="col-md-2">
             <DatePicker
               selected={this.state.createdAt}
               onChange={this.handleDateChange}

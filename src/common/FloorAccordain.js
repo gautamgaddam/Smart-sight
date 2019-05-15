@@ -4,13 +4,15 @@ import { connect } from "react-redux";
 import { Collapse } from "reactstrap";
 import "./common.css";
 import axios from "axios";
-import  AddS  from "./AddS";
+import  Add  from "./Add";
 const FloorAccordian = ({
   name,
   selectedFloorId,
   id,
   onCollapse,
-  tempSectors
+  tempSectors,
+  width,
+  height
 }) => {
   return (
     <div className="accordion__item">
@@ -43,9 +45,12 @@ const FloorAccordian = ({
         {tempSectors.length > 0 ? (
           <div>
             {id == selectedFloorId ? (
-              <div className="row justify-content-between  align-itenms-center ml-2 mr-2 mb-3 mt-3">
-                <h3 className="">Sectors</h3>
-                <AddS label="Add Sector" />
+
+             
+              <div className="column">
+             {width > 0 && height> 0 ?<div><h3><i>Floor Area</i></h3> <div  style={{width:"100%", height:`${height}px`, backgroundColor:"lightgrey"}}></div></div>: <button className="btn btn-secondary">Add Floor area</button>} 
+              <div className="row justify-content-between  align-itenms-center ml-2 mr-2 mb-3 mt-3"> <h3 className="">Sectors</h3><Add label="Add Sector" /></div>
+                
               </div>
             ) : null}
             <Collapse isOpen={id == selectedFloorId ? true : false}>
@@ -66,6 +71,11 @@ const FloorAccordian = ({
     </div>
   );
 };
+const floorBox={
+  backgroundColor:"lightgrey",
+  
+
+}
 const mapStateToProps = state => {
   return {
     selectedFloorId: state.buildings.selectedFloorId,

@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import './register.css';
 import {Row,Col,Container} from 'reactstrap';
 import { connect } from 'react-redux';
+
+import { userActions } from './../../../actions/user_actions';
+
+
 class Register extends React.Component{
     constructor(props){
         super(props);
@@ -73,6 +77,8 @@ class Register extends React.Component{
       return result;
     }
      register(event) {
+       const {user}= this.state;
+       const {dispatch}= this.props;
         // const {
         //   firstname,
         //   lastname,
@@ -103,7 +109,7 @@ class Register extends React.Component{
         //   .catch(error => {
         //     alert('Something went wrong');
         //   });
-              this.props.onRegister(this.state);
+        dispatch(userActions.register(user));
               // this.props.history.push("/login");
           event.preventDefault();
     }
@@ -167,9 +173,11 @@ class Register extends React.Component{
     }
 }
 
+const mapStateToProps = (state) => ({
+ 
+  registration: state.registration
+});
 
-const mapDispatchToProps=(dispatch)=>{
- return{ onRegister: (data)=>dispatch({type:"REGISTER", payload: data})}
-}
+const connectedRegisterPage = connect(mapStateToProps)(Register);
 
-export default connect(null, mapDispatchToProps)(Register);
+export { connectedRegisterPage as Register };
