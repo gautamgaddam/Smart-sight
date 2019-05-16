@@ -12,9 +12,12 @@ const FloorAccordian = ({
   onCollapse,
   tempSectors,
   width,
-  height
+  height,
+  buildingid
+ 
 }) => {
   return (
+    
     <div className="accordion__item">
       <div
         id="accordion__title-15"
@@ -54,15 +57,13 @@ const FloorAccordian = ({
               </div>
             ) : null}
             <Collapse isOpen={id == selectedFloorId ? true : false}>
-              <ul id="elements">
-                {tempSectors.map(sector => (
+              <ul id="elements" style={elements}>
+                {tempSectors.map((sector, i )=> (
                   <li key={sector.id}>
-                    <Link to={"/sector" + "/cid" + "/camid" + "/floorid"}>
+                    <Link to={`building/${buildingid}/floor/${id}/sector/${i+1}`}>
                       {sector.name}
                     </Link>
-                    {/* <Link to={"/sector" + "/cid" + "/camid" + "/floorid"}>
-                      {sector.name}
-                    </Link> */}
+                    
                   </li>
                 ))}
               </ul>
@@ -74,7 +75,9 @@ const FloorAccordian = ({
     </div>
   );
 };
-
+const elements= {
+  padding: "10px",
+}
 const mapStateToProps = state => {
   return {
     selectedFloorId: state.buildings.selectedFloorId,

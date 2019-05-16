@@ -43,7 +43,7 @@ const Routers = () => (
   <Switch>
   <AuthorizeRoute exact path="/" component={Base} />
   <AuthorizeRoute
-           path="/sector/:id"
+           path="/floor/:id/sector/:id"
             component={Sectors}
           />
     <Route path="/login" component={Login} />

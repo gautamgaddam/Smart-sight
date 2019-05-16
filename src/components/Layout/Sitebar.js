@@ -185,7 +185,7 @@ class Sitebar extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
+
   return { isAuthenticated: state.authorizeReducer.isAuthenticated };
 };
-export default connect()(Sitebar);
+export default connect(mapStateToProps)(Sitebar);

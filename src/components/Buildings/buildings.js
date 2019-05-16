@@ -21,12 +21,12 @@ class Building extends Component {
     this.setState({ show: !this.state.show });
   };
   componentDidMount() {
-    console.log(this.props);
+    
     const stateBuildings = [...this.props.buildings];
     axios.get("https://jsonplaceholder.typicode.com/posts").then(data => {
       let i = 1;
       data.data.map(item => {
-        if (i <= 10) {
+        if (i <= 5) {
           stateBuildings.push({ name: item.title, id: i, floors: [] });
         }
         i++;
@@ -52,7 +52,7 @@ componentWillUnmount(){
   }
 }
 const mapStateToProps = state => {
-  // console.log(state);
+
   return {
     buildings: state.buildings.buildings
   };

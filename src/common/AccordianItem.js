@@ -7,7 +7,9 @@ import Add from "./Add";
 import { uuid } from "uuid";
 
 const AccordianItem = ({ name, selectedRowId, id, onCollapse, tempFloors, width, height }) => {
+
   return (
+ 
     <div className="accordion__item">
       <div
         aria-selected={id == selectedRowId ? true : false}
@@ -39,8 +41,8 @@ const AccordianItem = ({ name, selectedRowId, id, onCollapse, tempFloors, width,
               <Add label="Add Floor" />
             </div>
             {tempFloors.length > 0 ? (
-              tempFloors.map(floor => (
-                <FloorAccordain name={floor.name} id={floor.id} width={floor.width} height={floor.height}/>
+              tempFloors.map((floor, i) => (
+                <FloorAccordain name={floor.name} id={i+1} width={floor.width} height={floor.height} key={uuid} buildingid={id}/>
               ))
             ) : (
               <h3>No Floors Found</h3>
