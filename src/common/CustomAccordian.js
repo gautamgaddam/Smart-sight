@@ -3,6 +3,7 @@ import AccordianItem from "./AccordianItem";
 import uuid from "uuid";
 
 const CustomAccordian = ({ data, columns = "12" }) => {
+
   return (
     <div className={["mb-30", "col-xl-" + columns].join(" ")}>
       <div className="card-body">

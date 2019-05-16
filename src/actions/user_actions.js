@@ -3,13 +3,14 @@ import { userService } from '../services/user.service';
 import { alertActions } from './';
  import { history } from '../history';
 
+
 export const userActions = {
     register
 };
 
 function register(user) {
-    // console.log(user);
     debugger;
+    console.log(user);
     return dispatch => {
         dispatch(request(user));
 

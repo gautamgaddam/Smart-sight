@@ -7,6 +7,9 @@ export class Sectors extends Component {
     super(props);
     this.state = {};
   }
+  componentDidMount(props){
+    console.log(this.props);
+  }
   render() {
     return (
       <Base>

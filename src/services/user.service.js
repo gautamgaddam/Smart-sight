@@ -1,3 +1,4 @@
+
 //  import { authHeader } from '../helpers';
 
 export const userService = {
@@ -7,6 +8,7 @@ export const userService = {
 };
 
 function register(user) {
+    console.log(user);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

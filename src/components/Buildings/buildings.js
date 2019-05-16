@@ -6,7 +6,6 @@ import Base from '../Layout/Base';
 import axios from "axios";
 import CustomAccordian from "./../../common/CustomAccordian";
 import PageWrapper from "../../common/PageWrapper";
-
 class Building extends Component {
   constructor(props) {
     super(props);
@@ -22,6 +21,7 @@ class Building extends Component {
     this.setState({ show: !this.state.show });
   };
   componentDidMount() {
+    console.log(this.props);
     const stateBuildings = [...this.props.buildings];
     axios.get("https://jsonplaceholder.typicode.com/posts").then(data => {
       let i = 1;
@@ -35,7 +35,10 @@ class Building extends Component {
       this.props.onLoad(buildingId, floorId, stateBuildings);
     });
   }
-
+componentWillUnmount(){
+  const stateBuildings = [];
+  
+}
   render() {
     const { buildings } = this.props;
     return (

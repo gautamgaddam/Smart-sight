@@ -43,7 +43,7 @@ const Routers = () => (
   <Switch>
   <AuthorizeRoute exact path="/" component={Base} />
   <AuthorizeRoute
-           path="/sector/:cid/:camid/:floorid"
+           path="/sector/:id"
             component={Sectors}
           />
     <Route path="/login" component={Login} />
@@ -53,5 +53,7 @@ const Routers = () => (
     <Route path="*" component={Errors} />
   
 </Switch>
+
+
   );
 export default Routers;

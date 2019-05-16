@@ -140,7 +140,7 @@ class Sitebar extends Component {
           <div className="saidbar">
             <ul className="nav navbar-nav side-menu" id="sidebarnav">
               <li className="active">
-                <Link to="/">
+                <Link to="/dashboard">
                   <i className="ti-home" />
                   <span className="right-nav-text">Dashboard</span>
                 </Link>
@@ -151,12 +151,12 @@ class Sitebar extends Component {
               </li>
            
               <li>
-                <Link to="./buildings">
+                <Link to="/buildings">
                   <i className="ti-comments" />
                   <span className="right-nav-text">Buildings </span>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="./floors">
                   <i className="ti-comments" />
                   <span className="right-nav-text">Floors </span>
@@ -168,14 +168,14 @@ class Sitebar extends Component {
                   <i className="ti-comments" />
                   <span className="right-nav-text">Sectors </span>
                 </Link>
-              </li>
-
+              </li> */}
+{/* 
               <li>
                 <Link to="./eventcalendar">
                   <i className="ti-calendar" />
                   <span className="right-nav-text">Events Calendar</span>{" "}
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </ScrollArea>
