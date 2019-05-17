@@ -8,7 +8,7 @@ const CustomAccordian = ({ data, columns = "12" }) => {
     <div className={["mb-30", "col-xl-" + columns].join(" ")}>
       <div className="card-body">
         <div role="tablist" className="accordion">
-          {data.map(building => (
+          {data.map((building, i) => (
             <AccordianItem
               name={building.name}
               id={building.id}

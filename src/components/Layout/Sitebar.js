@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ScrollArea from "react-scrollbar";
 import { Collapse } from "reactstrap";
 import { connect } from "react-redux";
@@ -139,11 +139,11 @@ class Sitebar extends Component {
         >
           <div className="saidbar">
             <ul className="nav navbar-nav side-menu" id="sidebarnav">
-              <li className="active">
-                <Link to="/dashboard">
+              <li >
+                <NavLink to="/dashboard" activeClassName="is-active">
                   <i className="ti-home" />
                   <span className="right-nav-text">Dashboard</span>
-                </Link>
+                </NavLink>
               </li>
             
               <li className="mt-10 mb-10 text-muted pl-4 font-medium menu-title">
@@ -151,10 +151,10 @@ class Sitebar extends Component {
               </li>
            
               <li>
-                <Link to="/buildings">
+                <NavLink activeClassName="is-active" class="active" to="/buildings">
                   <i className="ti-comments" />
                   <span className="right-nav-text">Buildings </span>
-                </Link>
+                </NavLink>
               </li>
               {/* <li>
                 <Link to="./floors">

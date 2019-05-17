@@ -1,0 +1,92 @@
+.simple {
+	.accordion__title {
+		padding:12px;
+		border:0;
+		margin-bottom: 0;
+		&:hover {
+			background-color: transparent;
+			.u-position-relative {
+				color:$theme-color;
+			}
+		}
+		&.accordion__title[aria-selected="true"] {
+			background-color: transparent;
+			.u-position-relative {
+				color:$theme-color;
+			}
+		}
+	}
+
+}
+.accordion {
+	border:0;
+}
+.accordion__title {
+	background-color: transparent;
+	border: 1px solid $border-color;
+	box-shadow: none;
+	margin-bottom: 20px;
+	padding: 12px 24px;
+	font-size: 1.143rem;
+	position: relative;
+	color: $dark-gray;
+	line-height: normal;
+	cursor: pointer;
+	display: block;
+	border-radius: 3px;
+	}
+.accordion__title .u-position-relative strong{
+	font-weight:$font-medium;
+} 
+.accordion__item + .accordion__item {
+	border-top:0;
+}
+.accordion__title:hover, .accordion__title[aria-selected="true"]{
+	background-color: $theme-color;
+}
+.accordion__title:hover .u-position-relative, .accordion__title[aria-selected="true"] .u-position-relative{
+	color: $white;
+}
+.accordion__title:focus {
+	outline:0;
+}
+.accordion__body {
+	padding-top:0;
+}
+.accordion__arrow {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -6px;
+}
+.accordion__arrow::before, .accordion__arrow::after {
+    transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+.accordion__arrow::after, .accordion__arrow::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background-color: currentColor;
+    content: '';
+}
+.accordion__arrow::before {
+    left: 4px;
+    transform: rotate(45deg);
+}
+
+[aria-expanded='true'] .accordion__arrow::before, [aria-selected='true'] .accordion__arrow::before {
+    transform: rotate(-45deg);
+}
+.accordion__arrow::after {
+    right: 4px;
+    transform: rotate(-45deg);
+}
+[aria-expanded='true'] .accordion__arrow::after, [aria-selected='true'] .accordion__arrow::after {
+    transform: rotate(45deg);
+}
