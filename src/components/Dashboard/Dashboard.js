@@ -229,7 +229,6 @@ export class Dashboard extends React.Component {
     this.setState(LinechartState);
     this.setState(BarchartState);
   }
-
   render() {
     const DnDCalendar = withDragAndDrop(Calendar);
     const { buildings, floors } = { ...this.props };
@@ -453,7 +452,8 @@ const mapDispatchToProps = dispatch => {
     onBuildingChange: id =>
       dispatch({ type: "ChangeBuilding", payload: { buildingId: id } }),
     onBuildingChange: id =>
-      dispatch({ type: "ChangeFloor", payload: { floorId: id } })
+      dispatch({ type: "ChangeFloor", payload: { floorId: id } }),
+    loadBuildings: () => dispatch({ type: "LoadData" })
   };
 };
 export default connect(
