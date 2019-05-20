@@ -112,11 +112,11 @@ class Login extends React.Component {
               }}
             >
               <div className="login-fancy">
-                <h2 className="text-white mb-20">Hello world!</h2>
-                <p className="mb-20 text-white">
+                <h2 className="text-white mb-20">Smart Sight</h2>
+                {/* <p className="mb-20 text-white" style={{visibility: "none"}}>
                   Create tailor-cut websites with the exclusive multi-purpose
                   responsive template along with powerful features.
-                </p>
+                </p> */}
                 <ul className="list-unstyled  pos-bot pb-30">
                   <li className="list-inline-item">
                     <a className="text-white" href="#">

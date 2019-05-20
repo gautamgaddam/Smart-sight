@@ -8,7 +8,7 @@ import Building from "./components/Buildings/buildings";
 import AuthorizeRoute from "../src/common/AuthorizeRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { Sectors } from "./components/Sectors/sectors";
-import {Register} from './components/Authentication/Register/Register';
+import { Register } from "./components/Authentication/Register/Register";
 
 const Routers = () => (
   // console.log(location)
@@ -41,19 +41,16 @@ const Routers = () => (
   // }
 
   <Switch>
-  <AuthorizeRoute exact path="/" component={Base} />
-  <AuthorizeRoute
-           path="/building/:id/floor/:id/sector/:id"
-            component={Sectors}
-          />
+    <AuthorizeRoute exact path="/" component={Dashboard} />
+    <AuthorizeRoute
+      path="/building/:id/floor/:id/sector/:id"
+      component={Sectors}
+    />
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />
     <AuthorizeRoute path="/dashboard" component={Dashboard} />
     <AuthorizeRoute path="/buildings" component={Building} />
     <Route path="*" component={Errors} />
-  
-</Switch>
-
-
-  );
+  </Switch>
+);
 export default Routers;

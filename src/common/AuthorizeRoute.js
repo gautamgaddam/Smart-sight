@@ -26,13 +26,24 @@ import Login from "../components/Authentication/Login/Login";
 //     <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
 //   );
 
-export const AuthorizeRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={props => (
-      localStorage.getItem('user')
-          ? <Component {...props} />
-          : <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
-  )} />
-)
+export const AuthorizeRoute = ({
+  component: Component,
+  isAuthenticated,
+  ...rest
+}) => (
+  <Route
+    {...rest}
+    render={props =>
+      isAuthenticated ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{ pathname: "/login", state: { from: props.location } }}
+        />
+      )
+    }
+  />
+);
 
 const mapStateToProps = state => {
   // console.log(state);

@@ -1,22 +1,23 @@
 import React,{Component} from 'react';
 import { Row, Col} from 'reactstrap';
+import { callbackify } from 'util';
 
 class Footer extends Component{
     render(){
         return(
             //<!--================================= footer -->
            
-        <footer className="bg-white p-4">
+        <footer className="bg-white p-4" > 
                <Row>
                 <Col md={6}>
                     <div className="text-center text-md-left">
-                      <p className="mb-0"> © Copyright <span id="copyright"> 2018</span>. <a href="#"> Webmin </a> All Rights Reserved. </p>
+                      <p className="mb-0"> © Copyright <span id="copyright"> 2018</span>. <a href="#"> SmartSight </a> All Rights Reserved. </p>
                     </div>
                     </Col>
                     <Col md={6}>
                       <ul className="text-center text-md-right">
                         <li className="list-inline-item"><a href="#">Terms &amp; Conditions </a> </li>
-                        <li className="list-inline-item"><a href="#">API Use Policy </a> </li>
+                        {/* <li className="list-inline-item"><a href="#">API Use Policy </a> </li> */}
                         <li className="list-inline-item"><a href="#">Privacy Policy </a> </li>
                       </ul>
                     </Col>
@@ -26,4 +27,5 @@ class Footer extends Component{
         );
     }
 }
+
 export default Footer;

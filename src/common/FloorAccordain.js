@@ -51,7 +51,7 @@ const FloorAccordian = ({
 
              
               <div className="column">
-             {width > 0 && height> 0 ?<div><h3><i>Floor Area</i></h3> <div  style={{width:"100%", height:`${height}px`, backgroundColor:"lightgrey"}}></div></div>: null} 
+             {width > 0 && height> 0 ?<div><h3><i>Floor Area</i></h3> <div  style={{width:`${width}px`, height:`${height}px`, backgroundColor:"lightgrey"}}></div></div>: null} 
               <div className="row justify-content-between  align-itenms-center ml-2 mr-2 mb-3 mt-3"> <h3 className="">Sectors</h3><Add label="Add Sector" /></div>
                 
               </div>

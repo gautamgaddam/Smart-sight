@@ -77,6 +77,19 @@ export default (state = buildingsReducerDefaultState, action) => {
     case "ADD_SECTOR":
       const Sectors = [action.payload, ...state.tempFloors];
       return { ...state, tempSectors: Sectors };
+    case "LoadData":
+      const b = [];
+      axios.get("https://jsonplaceholder.typicode.com/posts").then(data => {
+        let i = 1;
+        data.data.map(item => {
+          if (i <= 10) {
+            b.push({ name: item.title, id: i, floors: [] });
+          }
+          i++;
+        });
+        console.log(data)
+      });
+      return { ...state, buildings: b };
     default:
       return state;
   }

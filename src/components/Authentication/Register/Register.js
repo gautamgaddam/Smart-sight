@@ -33,6 +33,7 @@ class Register extends React.Component {
     this.updateValidators([event.target.name], event.target.value);
   }
   updateValidators(fieldName, value) {
+    
     this.validators[fieldName].errors = [];
     this.validators[fieldName].state = value;
     this.validators[fieldName].valid = true;
@@ -126,11 +127,11 @@ class Register extends React.Component {
               }}
             >
               <div className="login-fancy">
-                <h2 className="text-white mb-20">Hello world!</h2>
-                <p className="mb-20 text-white">
+                <h2 className="text-white mb-20">Smart Sight</h2>
+                {/* <p className="mb-20 text-white">
                   Create tailor-cut websites with the exclusive multi-purpose
                   responsive template along with powerful features.
-                </p>
+                </p> */}
                 <ul className="list-unstyled pos-bot pb-30">
                   <li className="list-inline-item">
                     <a className="text-white" href="#">
@@ -213,10 +214,11 @@ class Register extends React.Component {
                   />
                   {this.displayValidationErrors("password")}
                 </div>
-                {/* <div className="section-field mb-20">
+              
+                <div className="section-field mb-20">
                           <label className="mb-10" htmlFor="company">Company</label>
-                          <input className="web form-control" value={this.state.company} id="company" type="text" placeholder="company not mandatory" name="company" onChange={this.onchange} />
-                        </div> */}
+                          <input className="web form-control" value={this.state.company} id="company" type="text" placeholder="company name" name="company" onChange={this.onchange} />
+                        </div>
 
                 {
                   <a
