@@ -28,6 +28,8 @@ import classnames from "classnames";
 
 import Visitors from "./Visitors";
 import DropDown from "./../../common/DropDown";
+import "./Dashboard.css";
+import { Link } from "react-router-dom";
 
 const localizer = Calendar.momentLocalizer(moment);
 
@@ -235,8 +237,8 @@ export class Dashboard extends React.Component {
     return (
       <Base>
         <div>
-          <div className="page-title">
-            <Row>
+          <div className="page-title mb-2">
+            <Row className="align-items-center">
               <Col sm={6}>
                 <h4 className="mb-0"> Dashboard</h4>
                 <div
@@ -252,17 +254,39 @@ export class Dashboard extends React.Component {
                 />
               </Col>
 
-              <Col sm={6} style={{ display: "flex" }}>
-                {/* <Breadcrumb className="float-left float-sm-right">
+              <Col
+                sm={6}
+                style={{ display: "flex", justifyContent: "flex-end" }}
+              >
+                <Breadcrumb className="float-left float-sm-right d-flex align-items-center ">
                   <BreadcrumbItem>
                     <Link to="/dashboard">Home</Link>
                   </BreadcrumbItem>
                   <BreadcrumbItem active>Dashboard</BreadcrumbItem>
-                </Breadcrumb> */}
-                <DropDown data={buildings} />
-                <DropDown data={floors} />
+                </Breadcrumb>
               </Col>
             </Row>
+          </div>
+          <div
+            className="d-flex justify-content-end text-right mt-2 mb-3"
+            style={{
+              backgroundColor: "white",
+              padding: "10px 0",
+              boxShadow: "1px 1px 15px rgba(0, 0, 0, 0.1)"
+            }}
+          >
+            <div style={{ width: "50%" }}>
+              <Col style={{ display: "flex" }}>
+                <div style={{ width: "50%", marginRight: "1.5rem" }}>
+                  <label>Buildings</label>
+                  <DropDown data={buildings} />
+                </div>
+                <div style={{ width: "50%" }}>
+                  <label>Floors</label>
+                  <DropDown data={floors} />
+                </div>
+              </Col>
+            </div>
           </div>
           {/* <!-- widgets --> */}
           <Row>

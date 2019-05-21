@@ -41,6 +41,7 @@ const Routers = () => (
   // }
 
   <Switch>
+   
     <AuthorizeRoute exact path="/" component={Dashboard} />
     <AuthorizeRoute
       path="/building/:id/floor/:id/sector/:id"

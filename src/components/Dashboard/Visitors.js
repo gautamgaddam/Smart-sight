@@ -25,7 +25,7 @@ class Visitors extends Component {
   }
 
   render() {
-      console.log(this.props);
+    
     return (
       <Col xl={3} lg={6} md={6} className="mb-30">
         <Card className="card-statistics h-100">

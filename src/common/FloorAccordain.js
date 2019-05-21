@@ -48,7 +48,6 @@ const FloorAccordian = ({
         {tempSectors.length > 0 ? (
           <div>
             {id == selectedFloorId ? (
-
              
               <div className="column">
              {width > 0 && height> 0 ?<div><h3><i>Floor Area</i></h3> <div  style={{width:`${width}px`, height:`${height}px`, backgroundColor:"lightgrey"}}></div></div>: null} 

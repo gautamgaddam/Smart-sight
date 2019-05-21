@@ -32,8 +32,8 @@ class Header extends Component{
         return(
               <nav className="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row"> 
                     <div className="text-left navbar-brand-wrapper">
-                      <Link className="navbar-brand brand-logo" to="/"><img src="assets/images/logo-dark.png" alt="" /></Link>
-                      <Link className="navbar-brand brand-logo-mini" to="/"><img src="assets/images/logo-icon-dark.png"  alt="" /></Link>
+                      <Link className="navbar-brand brand-logo" to="/"><img src="/assets/images/logo-dark.png" alt="" /></Link>
+                      <Link className="navbar-brand brand-logo-mini" to="/"><img src="/assets/images/logo-icon-dark.png"  alt="" /></Link>
                     </div>
                     {/* <!-- Top bar left --> */}
                     <ul className="nav navbar-nav mr-auto">
@@ -97,7 +97,7 @@ class Header extends Component{
                         </li>
                         <li className="nav-item dropdown mr-30">
                             <a className="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            <img src="assets/images/profile-avatar.jpg" alt="avatar" />
+                            <img src="/assets/images/profile-avatar.jpg" alt="avatar" />
                             </a>
                             <div className="dropdown-menu dropdown-menu-right">
                             <div className="dropdown-header">
