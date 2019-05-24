@@ -14,6 +14,8 @@ export class Add extends React.Component {
     this.setState({ show: !this.state.show });
   }
   onAdd = (a) => {
+    console.log(a);
+
     this.setState({ show: !this.state.show });
     const {label}= this.props;
     if(label=="Add Floor"){
@@ -28,13 +30,13 @@ export class Add extends React.Component {
     this.props.onAddSector({
       name: a.name,
       createdAt: a.createdAt,
-      id: a.id
+      id: a.id,
+      height: a.height,
+      width: a.width
     });
   }
   }
   
-
-
   onCancel = () => {
     this.setState({ show: true });
   };

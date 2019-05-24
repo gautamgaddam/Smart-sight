@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import DatePicker from "react-datepicker";
 
 
@@ -26,23 +25,36 @@ export class AddFloor extends Component {
   };
   handleWidth= e=>{
     const val= e.target.value;
-    this.setState({width: val})
-  }
+    this.setState({width: parseInt(val)});
+  };
   handleHeight= e=>{
     const val= e.target.value;
-    this.setState({height: val})
-  }
+    this.setState({height: parseInt(val)});
+   
+  };
   componentDidMount(){
     console.log(this.props);
-  }
+  };
   onSubmit = (e) => {
-
+    
     e.preventDefault();
+  
     if (!this.state.name || !this.state.createdAt) {
       this.setState(() => ({ error: "Please Provide Floor Name" }));
-    } else {
+    }
+    else if(this.state.width==""){
+      this.setState(()=>({error: "Please enter width"}))
+    }
+    else if(this.state.height=="" ){
+      this.setState(()=>({error: "Please enter height"}))
+    
+    }
+    else if( this.state.height > this.state.width){
+      this.setState(()=>({error: "Height should be less than width"}))
+    }
+    
+    else {
       this.setState(() => ({ error: "" }));
-
       this.props.onSave({
         createdAt: this.state.createdAt,
         name: this.state.name,
@@ -51,6 +63,7 @@ export class AddFloor extends Component {
         height: this.state.height
       });
     }
+    console.log(this.state);
   };
   render() {
     return (
@@ -65,17 +78,16 @@ export class AddFloor extends Component {
             onChange={this.handleChange}
           />
           <input
-            type="text"
-            placeholder="Width"
+            type="number"
+            placeholder="Width in meters"
         
             className="col-md-2 mr-3 ml-3 "
             value={this.state.width}
             onChange={this.handleWidth}
           />
           <input
-            type="text"
-            placeholder="Height"
-          
+            type="number"
+            placeholder="Height in meters"
             className="col-md-2 mr-3 ml-3 "
             value={this.state.height}
             onChange={this.handleHeight}

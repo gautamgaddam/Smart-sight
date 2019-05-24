@@ -8,7 +8,8 @@ const buildingsReducerDefaultState = {
   sameBuildingFoundError: false,
   selectedFloorId: null,
   tempFloors: [],
-  tempSectors: []
+  tempSectors: [],
+  sectors: []
 };
 
 export default (state = buildingsReducerDefaultState, action) => {
@@ -41,14 +42,17 @@ export default (state = buildingsReducerDefaultState, action) => {
         tempFloors = [];
         tempSectors = [];
         let foundBuilding = null;
-        buildings.map(building => {
-          if (building.id === state.selectedRowId) {
+
+        for (let i = 0; i < buildings.length; i++) {
+          if (buildings[i].id == state.selectedRowId) {
             state.selectedRowId = null;
-          } else if (building.id === id) {
-            state.selectedRowId = building.id;
+            break;
+          } else if (buildings[i].id == id) {
+            state.selectedRowId = buildings[i].id;
             tempFloors = floors;
+            break;
           }
-        });
+        }
         return { ...state, tempFloors, tempSectors };
       } else if (itemId !== null) {
         tempSectors = sectors;
@@ -75,8 +79,11 @@ export default (state = buildingsReducerDefaultState, action) => {
       return { ...state, tempFloors: Floors };
 
     case "ADD_SECTOR":
-      const Sectors = [action.payload, ...state.tempFloors];
+      const Sectors = [action.payload, ...state.tempSectors];
       return { ...state, tempSectors: Sectors };
+    case "LOAD_SECTOR":
+      alert();
+      return { ...state };
     default:
       return state;
   }

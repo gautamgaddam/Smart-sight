@@ -21,14 +21,18 @@ class Building extends Component {
     this.setState({ show: !this.state.show });
   };
   componentDidMount() {
-    const stateBuildings = [...this.props.buildings];
+    const stateBuildings = [
+      { name: "Rent A Desk", id: 1, floors: [] },
+      { name: "Brand Factory", id: 2, floors: [] },
+      { name: "Falcon", id: 3, floors: [] }
+    ];
     axios.get("https://jsonplaceholder.typicode.com/posts").then(data => {
       let i = 1;
       data.data.map(item => {
-        if (i <= 10) {
-          stateBuildings.push({ name: item.title, id: i, floors: [] });
-        }
-        i++;
+        // if (i <= 10) {
+        //   stateBuildings.push({ name: item.title, id: i, floors: [] });
+        // }
+        // i++;
       });
       const { buildingId, floorId } = this.props.match.params;
       this.props.onLoad(buildingId, floorId, stateBuildings);

@@ -6,10 +6,16 @@ import "./common.css";
 import Add from "./Add";
 import { uuid } from "uuid";
 
-const AccordianItem = ({ name, selectedRowId, id, onCollapse, tempFloors, width, height }) => {
-
+const AccordianItem = ({
+  name,
+  selectedRowId,
+  id,
+  onCollapse,
+  tempFloors,
+  width,
+  height
+}) => {
   return (
- 
     <div className="accordion__item">
       <div
         aria-selected={id == selectedRowId ? true : false}
@@ -37,12 +43,22 @@ const AccordianItem = ({ name, selectedRowId, id, onCollapse, tempFloors, width,
         {id == selectedRowId ? (
           <div className="floor-main">
             <div className="row justify-content-between  align-itenms-center ml-2 mr-2 mb-3 mt-3">
-              <h3 className="">Floors</h3>
+              <h3 className="">
+                <i className="fa fa-level-up" aria-hidden="true" />
+                Floors
+              </h3>
               <Add label="Add Floor" />
             </div>
             {tempFloors.length > 0 ? (
               tempFloors.map((floor, i) => (
-                <FloorAccordain name={floor.name} id={i+1} width={floor.width} height={floor.height} key={uuid} buildingid={id}/>
+                <FloorAccordain
+                  name={floor.name}
+                  id={floor.id}
+                  width={floor.width}
+                  height={floor.height}
+                  key={floor.id}
+                  buildingid={id}
+                />
               ))
             ) : (
               <h3>No Floors Found</h3>
@@ -68,7 +84,13 @@ const mapDispatchToProps = dispatch => {
         let i = 10;
         data.data.map(item => {
           if (i >= 10 && i <= 20) {
-            floors.push({ name: item.title, id: i, sectors: [] });
+            floors.push({
+              name: item.title,
+              id: i,
+              sectors: [],
+              width: 1000,
+              height: 300
+            });
           }
           i++;
         });

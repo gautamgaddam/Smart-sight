@@ -2,10 +2,8 @@ import React from "react";
 import "../Styles/style.css";
 export class CanvasElement extends React.Component {
   static defaultProps = {
-    width: 501,
-    height: 278,
     strokeStyle: "red",
-    fillStyle:"red",
+    fillStyle: "red",
     lineWidth: 1,
     onSelected: () => {}
   };
@@ -17,7 +15,7 @@ export class CanvasElement extends React.Component {
   startY = -1;
   curX = -1;
   curY = -1;
-  
+
   componentDidMount(props) {
     this.ctx = this.canvas.getContext("2d");
     this.ctx.strokeStyle = this.props.strokeStyle;
@@ -31,9 +29,9 @@ export class CanvasElement extends React.Component {
     if (!this.isDirty) {
       return;
     }
-   
+
     if (this.isDrag) {
-        this.ctx.clearRect(0, 0, this.props.width, this.props.height);
+      this.ctx.clearRect(0, 0, this.props.width, this.props.height);
       const rect = {
         x: this.startX,
         y: this.startY,
@@ -50,13 +48,13 @@ export class CanvasElement extends React.Component {
   }
 
   addMouseEvents() {
-    const mouseTarget= document.getElementById("canvas");
+    const mouseTarget = document.getElementById("canvas");
     mouseTarget.addEventListener("mousedown", this.onMouseDown, false);
     mouseTarget.addEventListener("mousemove", this.onMouseMove, false);
     mouseTarget.addEventListener("mouseup", this.onMouseUp, false);
   }
   removeMouseEvents() {
-    const mouseTarget= document.getElementById("canvas");
+    const mouseTarget = document.getElementById("canvas");
     mouseTarget.removeEventListener("mousedown", this.onMouseDown, false);
     mouseTarget.removeEventListener("mousemove", this.onMouseMove, false);
     mouseTarget.removeEventListener("mouseup", this.onMouseUp, false);
@@ -77,10 +75,9 @@ export class CanvasElement extends React.Component {
   };
 
   onMouseUp = e => {
-      
     this.isDrag = false;
     this.isDirty = true;
-    
+
     const rect = {
       x: Math.min(this.startX, this.curX),
       y: Math.min(this.startY, this.curY),
@@ -91,10 +88,10 @@ export class CanvasElement extends React.Component {
     // this.ctx.fillStyle="#FF0000";
     // this.ctx.fillRect(rect.x, rect.y, rect.w, rect.h);
     this.props.onSelected(rect);
-   
+
     //  this.props.myCallback(rect);
   };
-  
+
   render() {
     return (
       <canvas
@@ -104,6 +101,10 @@ export class CanvasElement extends React.Component {
           this.canvas = c;
         }}
         id="canvas"
+        style={{
+          height: this.props.height > 0 ? `${this.props.height}px` : "278px",
+          width: this.props.width > 0 ? `${this.props.width}px` : "500px"
+        }}
       />
     );
   }

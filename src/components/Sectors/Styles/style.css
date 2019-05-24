@@ -10,21 +10,19 @@
 #main-div{
     position: relative;
     background: url(../Images/sectormain.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 .btn{
     pointer-events: auto;
 }
 #canvas-div{
     z-index: 100;
-    height: 278px;
+  
     position: relative;
 }
-/* .canvas-delete::after{
-    content: 'x'; 
-color: #fff;
-font-weight: 300;
-font-family: Arial, sans-serif;
-} */
+
 #main-div:hover .fa-times, #main-div:hover .fa-edit{
     visibility: visible;
 }
@@ -35,9 +33,7 @@ font-family: Arial, sans-serif;
     font-weight: normal;
     visibility: visible;
 }
-/* .canvas-delete > .fa-plus{
-    color: green;
-} */
+
 .button-main{
     width: 500px;
     display: flex;

@@ -9,7 +9,7 @@ export const userActions = {
 };
 
 function register(user) {
-    debugger;
+  
     console.log(user);
     return dispatch => {
         dispatch(request(user));

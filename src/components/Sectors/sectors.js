@@ -14,7 +14,7 @@ export class Sectors extends Component {
     return (
       <Base>
       <div >
-        <h1>Sector</h1>
+        <h1><i class="fa fa-level-up" aria-hidden="true" style={{transform: 'rotate(90deg)', marginRight: '5px'}}></i>Sector</h1>
         <ImageCoordinates/>
         
       </div>

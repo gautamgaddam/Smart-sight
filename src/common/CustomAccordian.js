@@ -12,7 +12,7 @@ const CustomAccordian = ({ data, columns = "12" }) => {
             <AccordianItem
               name={building.name}
               id={building.id}
-              key={uuid()}
+              key={building.id}
               enable={true}
               itemType="BUILDING"
             />
