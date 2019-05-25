@@ -9,6 +9,7 @@ import AuthorizeRoute from "../src/common/AuthorizeRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { Sectors } from "./components/Sectors/sectors";
 import { Register } from "./components/Authentication/Register/Register";
+import {Reports} from "./components/Reports/Reports.js";
 
 const Routers = () => (
   // console.log(location)
@@ -51,6 +52,7 @@ const Routers = () => (
     <Route path="/register" component={Register} />
     <AuthorizeRoute path="/dashboard" component={Dashboard} />
     <AuthorizeRoute path="/buildings" component={Building} />
+    <AuthorizeRoute path="/reports" component={Reports} />
     <Route path="*" component={Errors} />
   </Switch>
 );

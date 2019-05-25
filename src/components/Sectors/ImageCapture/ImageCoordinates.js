@@ -29,7 +29,7 @@ export class ImageCoordinates extends React.Component {
     this.state = {
       condition: false,
       newcanvas: false,
-      values: { x: 20, y: 40, h: 200, w: 100 },
+      values: {},
       showModal: false,
       color: "grey",
       zone: "",

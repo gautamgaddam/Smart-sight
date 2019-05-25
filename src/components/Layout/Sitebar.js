@@ -156,6 +156,12 @@ class Sitebar extends Component {
                   <span className="right-nav-text">Buildings</span>
                 </NavLink>
               </li>
+              <li>
+                <NavLink activeClassName="is-active" className="active" to="/reports">
+                  <i className="fa fa-file" />
+                  <span className="right-nav-text">Reports</span>
+                </NavLink>
+              </li>
               {/* <li>
                 <Link to="./floors">
                   <i className="ti-comments" />
