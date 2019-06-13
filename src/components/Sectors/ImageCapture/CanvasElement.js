@@ -1,7 +1,11 @@
+
+    
 import React from "react";
 import "../Styles/style.css";
 export class CanvasElement extends React.Component {
   static defaultProps = {
+    width: 500,
+    height: 278,
     strokeStyle: "red",
     fillStyle: "red",
     lineWidth: 1,
@@ -22,6 +26,7 @@ export class CanvasElement extends React.Component {
     this.ctx.lineWidth = this.props.lineWidth;
     this.addMouseEvents();
   }
+
   updateCanvas = () => {
     if (this.isDrag) {
       requestAnimationFrame(this.updateCanvas);
@@ -110,3 +115,4 @@ export class CanvasElement extends React.Component {
   }
 }
 export default CanvasElement;
+

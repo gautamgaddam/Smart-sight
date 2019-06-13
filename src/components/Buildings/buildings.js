@@ -61,7 +61,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onCollapse: id => dispatch({ type: "COLLAPSE", value: id }),
-    onLoad: (bid, fid, stateBuildings) =>
+    onLoad: (bid, fid, stateBuildings) =>         
       dispatch({
         type: "LOAD_BUILDINGS",
         payload: { bid, fid, stateBuildings }

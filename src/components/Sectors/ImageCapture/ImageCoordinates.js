@@ -153,10 +153,7 @@ export class ImageCoordinates extends React.Component {
       condition: !this.state.condition
     });
   };
-  componentDidMount() {
-    debugger;
-    this.child.current.getSectorArea();
-  }
+
   render() {
     const { id: floorId, onLoadSectors, elements } = { ...this.props };
     return (
@@ -275,7 +272,7 @@ export class ImageCoordinates extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    values: { x: 20, y: 40, w: 400, h: 100 },
+    values: { },
     id: 1,
     color: "grey"
   };
