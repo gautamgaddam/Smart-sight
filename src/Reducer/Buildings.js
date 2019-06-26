@@ -1,6 +1,5 @@
 import axios from "axios";
 import Floors from "./../components/Floors/floors";
-
 const buildingsReducerDefaultState = {
   buildings: [],
   selectedRowId: null,
@@ -80,7 +79,12 @@ export default (state = buildingsReducerDefaultState, action) => {
 
     case "ADD_SECTOR":
       const Sectors = [action.payload, ...state.tempSectors];
-      return { ...state, tempSectors: Sectors };
+
+  console.log(Sectors);
+          // return { ...state, tempSectors: Sectors };
+ 
+          return console.log(state);
+     
     case "LOAD_SECTOR":
       alert();
       return { ...state };
