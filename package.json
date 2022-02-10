@@ -76,7 +76,7 @@
     "jquery": "^3.4.1",
     "less-loader": "^5.0.0",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "rcolor": "^1.0.1",
